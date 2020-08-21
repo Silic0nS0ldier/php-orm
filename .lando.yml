@@ -1,0 +1,10 @@
+name: php-orm
+services:
+  lib-server:
+    type: php:7.4
+    via: cli
+tooling:
+  composer:
+    service: lib-server
+    description: Run composer
+    cmd: composer
