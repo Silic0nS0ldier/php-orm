@@ -1,10 +1,24 @@
-name: php-orm
-services:
-  lib-server:
-    type: php:7.4
-    via: cli
-tooling:
-  composer:
-    service: lib-server
-    description: Run composer
-    cmd: composer
+{
+    "name": "silicon-soldier-db",
+    "services": {
+        "lib-server": {
+            "type": "php:custom",
+            "via": "cli",
+            "overrides": {
+                "build": "./lando/php8.0.0RC2"
+            }
+        }
+    },
+    "tooling": {
+        "composer": {
+            "service": "lib-server",
+            "description": "Run composer",
+            "cmd": "composer"
+        },
+        "phpunit": {
+            "service": "lib-server",
+            "description": "Run PHPUnit",
+            "cmd": "vendor/bin/phpunit"
+        }
+    }
+}
