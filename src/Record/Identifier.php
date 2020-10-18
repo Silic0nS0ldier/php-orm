@@ -7,7 +7,7 @@ use Attribute;
 /**
  * Indicates property serves as the primary key (or part of a composite key).
  */
-@@Attribute(Attribute::TARGET_PROPERTY)
+#[Attribute(Attribute::TARGET_PROPERTY)]
 class Identifier
 {
     public function __construct(

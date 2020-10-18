@@ -42,14 +42,14 @@ class User extends Record
     // TODO Figure out API surface, is this a string or reference to a class?
     protected static $defaultConnection;
 
-    @@Column
-    @@Identifier
+    #[Column]
+    #[Identifier]
     protected int $id;
 
-    @@Column('first_name')
+    #[Column('first_name')]
     protected string $firstName;
 
-    @@Column
+    #[Column]
     protected string $surname;
 }
 
